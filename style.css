@@ -7,7 +7,7 @@ html{
   height: 100%;
   width: 100%;
   --innerRed: rgb(227, 7, 0);
-  --outerRed: rgb(251, 103, 98);
+  --outerRed: rgb(255, 185, 182);
 }
 
 body {
@@ -45,9 +45,16 @@ header {
   height: 6vmin;
   width: 6vmin;
   margin-right: 12vmin;
-  border-style: none;
+  border-style: inset outset;
+  border-width: 0.3vmin;
+  border-color: rgb(207, 207, 207);
   border-radius: 50%;
   cursor: pointer;
+}
+
+#power:active {
+  border-style: outset inset;
+  transform: translateY(1px);
 }
 
 /* /// USER MESSAGES /// */
@@ -77,14 +84,10 @@ header {
   position: fixed;
   text-align: center;
   color: white;
-}
-
-#first-indication {
-  margin-top: 33vmin;
-}
-
-#second-indication {
-  margin-bottom: 33vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .arrow {
@@ -283,4 +286,19 @@ footer {
   margin: 1vmin auto 1vmin 0;
   display: block;
   cursor: pointer;
+}
+
+#insert-coin:active {
+  transform: translateY(1px);
+}
+
+@media screen and (max-width: 1024px) {
+
+  .arrow.top {
+    transform: rotate(-30deg);
+  }
+
+  .arrow.bottom {
+    transform: rotate(30deg);
+  }
 }

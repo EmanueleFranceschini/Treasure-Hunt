@@ -44,7 +44,7 @@ function machineOn() {
     gameContent.style.animation = "closing-content 0.4s ease-out 1 forwards";
     scoreCreditBoard.style.display = "none";
     message.style.display = "none";
-    guide.style.display = "block";
+    guide.style.display = "flex";
     onOffLight.style.backgroundColor = "var(--innerRed)";
     onOffLight.style.borderColor = "var(--outerRed)";
   }
