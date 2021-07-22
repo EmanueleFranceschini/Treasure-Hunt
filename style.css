@@ -1,0 +1,286 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  height: 100%;
+  width: 100%;
+  --innerRed: rgb(227, 7, 0);
+  --outerRed: rgb(251, 103, 98);
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.1px;
+  border: solid 12vmin rgb(179, 179, 179);
+  border-radius: 13vmin;
+  background-color: black;
+}
+
+/*/// SWITCH ON/OFF SECTION ///*/
+
+header {
+  height: 12vmin;
+  width: 23vmin;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#on-off-light {
+  height: 2vmin;
+  width: 2vmin;
+  border: solid 1px var(--outerRed);
+  border-radius: 50%;
+  background-color: var(--innerRed);
+}
+
+#power {
+  height: 6vmin;
+  width: 6vmin;
+  margin-right: 12vmin;
+  border-style: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* /// USER MESSAGES /// */
+
+#message {
+  height: calc(100% - 24vmin);
+  width: calc(100% - 24vmin);
+  position: fixed;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2vmin;
+  font-family: 'Press Start 2P', cursive;
+  line-height: 4vmin;
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+#guide {
+  height: calc(100% - 24vmin);
+  width: calc(100% - 24vmin);
+  font-size: 2vmin;
+  font-family: 'Press Start 2P', cursive;
+  line-height: 4vmin;
+  position: fixed;
+  text-align: center;
+  color: white;
+}
+
+#first-indication {
+  margin-top: 33vmin;
+}
+
+#second-indication {
+  margin-bottom: 33vmin;
+}
+
+.arrow {
+  height: 4vmin;
+  width: 4vmin;
+}
+
+.bottom {
+  margin-bottom: -2vmin;
+}
+
+/* /// SCORE/CREDIT COUNT SECTION /// */
+
+#score-credit-board {
+  padding: 5vmin 0 0 5vmin;
+  position: absolute;
+  top: 12vmin;
+  left: 12vmin;
+  display: none;
+}
+
+#score {
+  font-size: 1.5vmin;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+}
+
+#credit {
+  font-size: 1.5vmin;
+  font-family: 'Press Start 2P', cursive;
+  margin-top: 1vmin;
+  color: white;
+}
+
+/* /// MAIN GAME CONTENT /// */
+
+#game {
+  height: 100%;
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  animation: opening-content 0.4s ease-out 1;
+}
+
+@keyframes opening-content {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes closing-content {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+    display: none;
+  }
+}
+
+h1 {
+  font-size: 2.5vmin;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  color: white;
+  display: inline-block;
+}
+
+#treasure-map {
+  height: 5vmin;
+  width: 5vmin;
+  margin-bottom: -1vmin;
+}
+
+#roll-cost {
+  font-size: 1.5vmin;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  margin-top: 1vmin;
+  color: white;
+}
+
+#start-button {
+  font-size: 4vmin;
+  font-weight: bold;
+  font-family: 'Press Start 2P', cursive;
+  box-sizing: border-box;
+  padding: 2vmin;
+  border-radius: 20px;
+  background: linear-gradient(45deg, rgb(240, 237, 0), 25%, rgb(230, 138, 0), 50%, rgb(255, 77, 0), 75%, rgb(194, 0, 116));
+  color: white;
+  display: block;
+  cursor: pointer;
+}
+
+#start-button:hover {
+  padding: 1.8vmin;
+  margin: 0.2vmin auto 0.2vmin auto;
+  background: linear-gradient(45deg, rgb(240, 237, 0, 0.95), 25%, rgb(230, 138, 0, 0.95), 50%, rgb(255, 77, 0, 0.95), 75%, rgb(194, 0, 116, 0.95));
+  transition: all 0.1s ease;
+}
+
+#chests-container {
+  height: 18vmin;
+  width: 50vmin;
+  border: dashed 3px white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  animation: moving-border 0.6s infinite linear;
+}
+
+@keyframes moving-border {
+  from {
+    border-style: dashed;
+  }
+  to {
+    border-style: dotted;
+  }
+}
+
+.chest {
+  height: 10vmin;
+  width: 10vmin;
+  background-image: url("treasure-chest-icon.svg");
+  background-position: center;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+@keyframes animated-treasures {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shuffling-first {
+  50% {
+    transform: translate(15.2vmin);
+  }
+  75% {
+    transform: translate(15.2vmin);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes shuffling-third {
+  50% {
+    transform: translate(-15.2vmin);
+  }
+  75% {
+    transform: translate(-15.2vmin);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.chest-content {
+  height: 5vmin;
+  width: 5vmin;
+  border-radius: 50%;
+  display: none;
+}
+
+/* /// INSERT COIN/ADD CREDIT /// */
+
+footer {
+  height: 12vmin;
+  width: 22vmin;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+#insert-coin {
+  height: 10vmin;
+  width: 10vmin;
+  margin: 1vmin auto 1vmin 0;
+  display: block;
+  cursor: pointer;
+}

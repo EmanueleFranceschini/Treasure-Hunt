@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treasure Hunt</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <div id="on-off-light"></div>
+    <img id="power" src="power-button.svg" alt="power_on_button">
+  </header>
+  <div id="message"></div>
+  <div id="guide">
+    <div id="first-indication">
+      <span>1. PRESS THE 'POWER' BUTTON TO START PLAYING!</span>
+      <img src="top-arrow.svg" alt="indication_arrow" class="arrow top">
+    </div>
+    <div id="second-indication">
+      <span>2. PRESS THE 'INSERT COIN' BUTTON TO ADD CREDIT!</span>
+      <img src="bottom-arrow.svg" alt="indication_arrow" class="arrow bottom">
+    </div>
+  </div>
+  <div id="score-credit-board">
+    <p id="score">CURRENT SCORE: 0</p>
+    <p id="credit">CREDIT: 0</p>
+  </div>
+
+  <div id="game">
+    <div id="title">
+      <h1>TREASURE HUNT</h1>
+      <img src="treasure-map.svg" alt="treasure_map" id="treasure-map">
+      <p id="roll-cost">1 CREDIT = 1 ROLL</p>
+    </div>
+    <button id="start-button">PLAY</button>
+    <div id="chests-container">
+      <div class="chest first">
+      </div>
+      <div class="chest">
+      </div>
+      <div class="chest third">
+      </div>
+    </div>
+  </div>
+  <footer>
+    <img id="insert-coin" src="coin-icon.svg" alt="insert_coin_button">
+  </footer>
+  <script src="app.js"></script>
+</body>
+
+</html>
