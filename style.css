@@ -218,7 +218,7 @@ h1 {
 .chest {
   height: 10vmin;
   width: 10vmin;
-  background-image: url("treasure-chest-icon.svg");
+  background-image: url("images/treasure-chest-icon.svg");
   background-position: center;
   background-size: contain;
   display: flex;

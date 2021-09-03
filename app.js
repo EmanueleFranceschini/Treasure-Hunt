@@ -82,7 +82,7 @@ function randomize() {
 
 
     // RANDOMIZING CHESTS CONTENT --
-    let initialPosition = ["<img src='gold-pot.svg' id='treasure' class='chest-content'>", "<img src='cross-mark.svg' class='chest-content'>", "<img src='cross-mark.svg' class='chest-content'>"];
+    let initialPosition = ["<img src='images/gold-pot.svg' id='treasure' class='chest-content'>", "<img src='images/cross-mark.svg' class='chest-content'>", "<img src='images/cross-mark.svg' class='chest-content'>"];
 
     let position = [];
 
